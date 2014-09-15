@@ -56,7 +56,7 @@ The orders/order page is responsible for handling an individual participant's or
  * The controller is given the order object as its model and it appends/removes menu items as selections are made on the page.  The menu items are displayed with their [own controllers](client/app/controllers/menu/display.js) which checks against the selected list of menu items in this controller to detect whether or not the particular item is selected (and should be rendered as such).
  * Since the menu items are attached/detached dynamically, the checkout event simply moves the user to the next page in the process, orders/checkout.
 
-**orders/checkout**
+**orders/checkout**  
 [route](client/app/routes/orders/checkout.js)  
 [controller](client/app/controllers/orders/checkout.js)  
 [template](client/app/templates/orders/checkout.hbs)  
@@ -68,7 +68,7 @@ The orders/checkout page is responsible for handling and sending payment info to
  * The controller simply handles the saving of the payment model to the server when the user clicks the 'Pay Now' button
  * If the response from the server shows that the order is now paid, the controller checks to see if the group order is now complete.  If so, the user is sent to the group order complete page.  If not, the user is sent to the individual order complete page where they can observe the status of the remaining participants.
 
-**orders/init**
+**orders/init**  
 [route](client/app/routes/orders/init.js)  
 [controller](client/app/controllers/orders/init.js)  
 [view](client/app/views/orders/init.js)  
