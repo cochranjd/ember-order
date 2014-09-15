@@ -1,16 +1,9 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-Menuitem.create(:title => 'Sandwich', :description => 'A delicous sandwich', :price_in_cents => 865)
-Menuitem.create(:title => 'Soup', :description => 'A nice bowl of soup', :price_in_cents => 865)
-Menuitem.create(:title => 'Cheeseburger', :description => 'A scrumptious cheeseburger', :price_in_cents => 865)
-Menuitem.create(:title => 'Pizza', :description => 'A pizza pie for you', :price_in_cents => 865)
-Menuitem.create(:title => 'Chili', :description => 'Hot, steaming chili', :price_in_cents => 865)
-Menuitem.create(:title => 'Taco', :description => 'Enjoy a crispy taco', :price_in_cents => 865)
-Menuitem.create(:title => 'Salad', :description => 'For the calorie concious', :price_in_cents => 865)
-Menuitem.create(:title => 'Steak', :description => 'Steak.  Enough said', :price_in_cents => 865)
-Menuitem.create(:title => 'Chicken', :description => 'MMMMMMMMM Chicken.', :price_in_cents => 865)
+Menuitem.create(:title => 'Original Ribs', :description => 'Smothered in Chili\'s classic BBQ sauce.', :price_in_cents => 1769)
+Menuitem.create(:title => 'Half Rack of Ribs', :description => 'Choose from all of our favorite flavors and your choice of one side.', :price_in_cents => 1019)
+Menuitem.create(:title => 'Southern Smokehouse Burger', :description => 'With four slices of applewood smoked bacon, melted cheddar cheese, Chili\'s classic', :price_in_cents => 999)
+Menuitem.create(:title => 'Big Mouth Bites', :description => 'Four mini burgers with applewood smoked bacon, American cheese, sauteed onions &...', :price_in_cents => 899)
+Menuitem.create(:title => 'Spicy Seared Shrimp Tacos', :description => 'Seared spicy chile-lime shrimp wrapped in three flour tortillas and topped with...', :price_in_cents => 1079)
+Menuitem.create(:title => 'Triple Dipper', :description => 'Combine your 3 favorite appetizers! Served with dipping sauces.', :price_in_cents => 1099)
+Menuitem.create(:title => 'Southwestern Eggrolls', :description => 'A Crispy flour tortillas stuffed with juicy smoked chicken, black beans, corn,...', :price_in_cents => 829)
+Menuitem.create(:title => 'Skillet Queso and Chips', :description => 'Cheese dip with seasoned beef. Served with warm tostada chips & fresh salsa.', :price_in_cents => 569)
+Menuitem.create(:title => 'Molten Chocolate Cake', :description => 'Indulge in moist chocolate cake with a melted chocolate center topped with vanilla...', :price_in_cents => 659)
