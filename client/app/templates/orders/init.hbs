@@ -1,0 +1,19 @@
+<div class="row title-row">
+    <div class="small-4 small-centered end columns title-wrap">
+        <h2>Ember<span class="emphasis">Order</span></h2>
+    </div>
+</div>
+<div class="row sub-title-row">
+    <div class="small-6 small-centered end columns">
+        <p>Somebody has invited you to participate
+           in a collaborative order using EmberOrder!</p>
+    </div>
+</div>
+<div class="row button-row">
+    <div class="small-6 small-centered columns">
+        <ul class="button-group even-2 radius join-cancel-button">
+            <li><button class="button alert" {{action "beginOrder" bubbles=false}}>ORDER NOW</button></li>
+            <li><button class="button secondary un-emphasis" {{action "declineOrder" bubbles=false}}>DECLINE</button></li>
+        </ul>
+    </div>
+</div>

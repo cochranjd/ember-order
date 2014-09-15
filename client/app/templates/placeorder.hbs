@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="small-8 small-centered columns">
+        <h1>Create new order</h1>
+        To create a new order, please enter the following information:
+
+        <form>
+            <label>Your e-mail address</label>{{input valueBinding="email" placeholder="Email..."}}<br>
+
+            <div class="row">
+                <div class="small-4 columns">
+                    <h6 class="left">Group Order?</h6>
+                    <div class="switch group-order-switch left round small">
+                        {{input id="groupOrderSwitch" type="checkbox" name="groupOrder" checkedBinding="isGroup"}}
+                        <label for="groupOrderSwitch"></label>
+                    </div>
+                </div>
+            </div>
+
+            {{#if isGroup}}
+            <div class="row">
+                <div class="group-order-fields">
+                    <div class="small-3 medium-2 large-2 columns">
+                        {{counter-input countBinding="associatedOrderCount"}}
+                    </div>
+                </div>
+            </div>
+            <div class="group-order-container">
+                {{#each order in associatedOrdersList}}
+                <div class="row">
+                    <div class="small-10 small-offset-1 columns">
+                        {{input valueBinding="order.email" placeholder="Orderer's Email..."}}
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            {{/if}}
+
+            <button class="button left" {{action "populate" bubbles=false}}>Populate</button>
+            <button class="button alert right" {{action "startOrder" bubbles=false}}>Start Order</button>
+        </form>
+    </div>
+</div>

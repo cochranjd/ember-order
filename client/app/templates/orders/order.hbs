@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="small-3 small-offset-9 columns">
+      <button class="button alert right checkout-button" {{action "checkout" bubbles=false}}>{{to-dollar totalPrice}} | Checkout</button>
+  </div>
+</div>
+<div class="row menuitem-flow">
+    <ul class="small-block-grid-3">
+        {{#each menulist}}
+            <li {{action "selectMenuItem" this bubbles=false}}>
+                {{render "menu/display" this}}
+            </li>
+        {{/each}}
+    </ul>
+</div>

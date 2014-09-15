@@ -1,0 +1,5 @@
+<h2>Associated Orders</h2>
+{{#each model}}
+    {{email}}: <a href="#" {{action "openOrder" this bubbles=false}}>{{unbound status}}</a><br>
+{{/each}}
+<a class="close-reveal-modal">&#215;</a>

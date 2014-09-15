@@ -1,0 +1,35 @@
+<h1>Payment</h1>
+<h2> Total: {{to-dollar total_price_in_cents}}</h2>
+
+<form>
+    <fieldset>
+        <legend>Credit Card Info</legend>
+
+        <div class="row">
+            <div class="large-offset-2 large-8 columns">
+                <label>CC Number
+                    {{input valueBinding="payment.cc_number" placeholder="CC Number..."}}
+                </label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-offset-2 large-6 columns">
+                <label>Name
+                    {{input valueBinding="payment.cc_name" placeholder="Name..."}}
+                </label>
+            </div>
+            <div class="large-2 end columns">
+                <label>CC Expires
+                    {{input valueBinding="payment.cc_expire" disabledBinding="payment.isValid" placeholder="CC Expires..."}}
+                </label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-3 large-centered columns">
+                <button class="button alert right" {{action "submitPayment" bubbles=false}}>Pay Now</button>
+            </div>
+        </div>
+    </fieldset>
+</form>

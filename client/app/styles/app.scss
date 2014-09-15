@@ -1,0 +1,242 @@
+@import "foundation/foundation/_settings";
+@import "foundation/foundation";
+@import "foundation/normalize";
+
+html, body {
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'bree';
+    font-style: normal;
+    font-weight: 400;
+}
+
+body {
+    font-family: 'adonis-web';
+    font-weight: 400;
+    background-color: #ECECEC;
+}
+
+.top-bar {
+    .top-menu {
+        line-height: 40px;
+
+        color: #FFFFFF;
+
+        & .emphasis {
+            color: $alert-color;
+        }
+
+        font-size: 17px;
+        margin-left: 10px;
+    }
+
+    .branding {
+        margin-top: 5px;
+
+        h2 {
+            color: #9C9C9C;
+            display: inline;
+            font-size: 24px;
+
+            margin-right: 10px;
+
+            & .emphasis {
+                color: #E66A6A;
+            }
+        }
+    }
+}
+
+.row.full-width {
+    width: 100%;
+    max-width: 100%;
+}
+
+// all
+.statuses {
+
+    margin-top: 15px;
+    padding: 20px;
+    border: solid 1px #D6D6D6;
+}
+
+.order-status {
+    margin: 5px 0;
+    font-size: 15px;
+
+    .email {
+        text-align: left;
+    }
+
+    .status {
+        text-align: right;
+    }
+
+    .progress {
+        border: none;
+        padding: 0;
+    }
+
+    &.is-finalized {
+        font-weight: bold;
+    }
+}
+
+.init-page-active {
+    background: url(/assets/images/burger-overlay.jpg) no-repeat center center fixed;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    width: 100%;
+    height: 100%;
+}
+
+// /orders/order/init
+.orders-init-page {
+
+    position: relative;
+    top: 100px;
+
+    .title-row {
+
+        .title-wrap {
+            border: solid 1px #FFFFFF;
+            text-align: center;
+
+            h2 {
+                font-size: 34px;
+                color: #FFFFFF;
+                letter-spacing: 1px;
+
+                & .emphasis {
+                    color: #E66A6A;
+                }
+            }
+        }
+    }
+
+    .sub-title-row {
+        text-align: center;
+        color: #FFF;
+        font-weight: 400;
+        font-family: 'adonis-web';
+        font-style: normal;
+
+        margin-top: 25px;
+    }
+
+    .button-row {
+        text-align: center;
+    }
+
+    .button-row {
+
+        margin-top: 45px;
+        text-align: center;
+
+        .join-cancel-button {
+            font-size: 14px;
+            font-weight: bold;
+
+            button {
+
+                height: 50px;
+
+                &.un-emphasis {
+                    color: #A8A8A8;
+                    font-size: 75%;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+}
+
+// /orders
+.orders-page {
+
+    .group-order-switch {
+        margin-left: 5px;
+    }
+
+    .group-order-container {
+        padding-top: 15px;
+        margin-bottom: 10px;
+        border: solid 1px #CFCFCF;
+        border-radius: 20px;
+        background-color: #EFEFEF;
+    }
+}
+
+// /orders/order
+.orders-order-page {
+
+    margin-top: 20px;
+
+    .menuitem-flow {
+        padding: 20px;
+    }
+
+    .checkout-button {
+        width: 100%;
+    }
+
+    .menu-item {
+        box-shadow: 1px 1px 2px 0 #D5D5D5;
+        background-color: #F3F3F3;
+
+        .title {
+            padding-top: 25px;
+            width: 100%;
+            height: 75px;
+            background-color: #FFFFFF;
+            text-align: center;
+
+            h3 {
+                color: $alert-color;
+            }
+        }
+
+        .description {
+            height: 120px;
+            padding: 15px;
+            em {
+                color: $alert-color;
+            }
+        }
+
+        .price {
+            width: 100%;
+            background-color: #F2BEB5;
+            text-align: right;
+
+            h5 {
+                position: relative;
+                right: 10px;
+                color: #FFFFFF;
+                font-size: 24px;
+
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+            background-color: #EDEDED;
+        }
+
+        &.is-selected {
+            .title {
+                background-color: #555555;
+
+                h3 {
+                    color: #FFFFFF;
+                }
+            }
+        }
+    }
+}

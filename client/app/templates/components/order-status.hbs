@@ -1,0 +1,15 @@
+<div class="small-12 columns">
+    <div class="row">
+        <div class="small-4 columns email">
+            {{order.email}}
+        </div>
+        <div class="small-4 columns status">
+            {{order.status}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="progress">
+            <span class="meter" {{bind-attr style="spanStyle"}}></span>
+        </div>
+    </div>
+</div>

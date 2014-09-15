@@ -1,0 +1,11 @@
+<div class="row collapse prefix-round postfix-round">
+  <div class="small-4 columns">
+    <a href="#" class="button prefix" {{action "countDown" target=view bubbles=false}}><i class="fa fa-minus-circle"></i></a>
+  </div>
+  <div class="small-4 columns">
+    {{input valueBinding="count" placeholder="Count..."}}
+  </div>
+  <div class="small-4 columns">
+    <a href="#" class="button postfix" {{action "countUp" target=view bubbles=false}}><i class="fa fa-plus-circle"></i></a>
+  </div>
+</div>
