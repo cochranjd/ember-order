@@ -1,6 +1,6 @@
 # Ember-Order
 
-[Live Demo](http://162.243.66.51)
+<a href="http://162.243.66.51/placeorder" alt="Live Demo" target="_blank">Live Demo</a>
 
 This application is a simple, collaborative ordering app that I built for presenting to the Ember-Dallas Meetup.com group.  This is not a production ready application and should only be used as a basic example or for learning purposes.
 
