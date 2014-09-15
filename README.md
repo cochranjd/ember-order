@@ -91,3 +91,15 @@ The statuses widget is used to track the status of all participants involved in 
  * Socket.IO responds with the current status of the group oder, which is set as the controller's model - an array of user statuses
  * The controller also listens for order status updates, which will only be sent by Socket.IO if there are updates to the status of participants in this group order.  If a message is received, the controller's model is updated.
  * Each time a message is received, the controller checks to see if all statuses are completed (completed simply means the order has either been declined or has been paid for and is done).  Once all orders are completed, the _orderComplete_ event is set, which eventually results in the [application route](client/app/routes/application.js) transitioning the user to a screen to inform them their group order is complete and will be delivered soon.
+
+**application route**
+[route](client/app/routes/application.js)  
+
+I wanted to briefly discuss the application route since there are some non-trivial things happening inside.
+
+ * Since events bubble from view to controller, then to route, then up the route chain, we an use the application route to catch application wide events.  In our case, these events only happen from one place, so we could catch them more locally, but the response to these actions typically is beyond the scope of the particular controller/view that is responsible for sending the message so I handled them in the application route.
+ * _orderComplete_ is fired once all statuses register as "complete" in the statuses controller.
+ * _getOrderInfo_ THIS IS A DEBUG ONLY FEATURE.  The application is built to send e-mails to invitees, but for live demo purposes, this is disabled.  To allow folks using the live demo to get the order paths of "invitees" and play with the application while not having access to the server to see the simulated invite e-mails go out, I have added a debug modal.  
+  * The modal uses a simple AJAX request since I didn't want to have af ull model layer and deal with record caching, which I actually do not want here.
+  * The server will take the associated container_id (which all participants share) and find all associated orders.  After stripping out the requesting order, the results are sent back.
+  * The modal displays the e-mail &amp; status of each order, providing a link to the actual order page allowing the user to jump in as that invitee and complete/decline the order.
