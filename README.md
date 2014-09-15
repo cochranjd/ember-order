@@ -79,3 +79,15 @@ The orders/init page is responsible for providing an entry point for users that 
  * The route looks up the order based on the URL.  Since this is NOT set up as a nested route on the order resource, it does NOT look it up on the orders route as many other's do.  This was done since I do not want this particular page to be rendered inside the orders outlet, but I did want a similar path.
  * The controller updates the status of the order, which indicates the user's decision about participation.  They are then transitioned to the appropriate route - the orders/order route for accepted orders and the orders/declined route for those opting out.
  * The view is adding and removing the init-page-active tag to the top level div on DOM insertion/removal.  This is to support the full screen image background since the view itself does not encapsulate the entire page.
+
+**statuses**  
+[controller](client/app/controllers/statuses.js)  
+[template](client/app/templates/statuses.hbs)  
+
+The statuses widget is used to track the status of all participants involved in the order.
+
+ * Once the order is created, the [orders/order route](client/app/routes/orders/order.js) sets the _order_ attribute on the controller.
+ * Once the controller detects an order has been set, it turns around and sends a request to Socket.IO indicating it needs to be made aware of changes to that group order.
+ * Socket.IO responds with the current status of the group oder, which is set as the controller's model - an array of user statuses
+ * The controller also listens for order status updates, which will only be sent by Socket.IO if there are updates to the status of participants in this group order.  If a message is received, the controller's model is updated.
+ * Each time a message is received, the controller checks to see if all statuses are completed (completed simply means the order has either been declined or has been paid for and is done).  Once all orders are completed, the _orderComplete_ event is set, which eventually results in the [application route](client/app/routes/application.js) transitioning the user to a screen to inform them their group order is complete and will be delivered soon.
