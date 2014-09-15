@@ -1,5 +1,7 @@
 # Ember-Order
 
+[Live Demo](http://162.243.66.51)
+
 This application is a simple, collaborative ordering app that I built for presenting to the Ember-Dallas Meetup.com group.  This is not a production ready application and should only be used as a basic example or for learning purposes.
 
 ## What this ISN'T
