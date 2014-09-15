@@ -92,7 +92,7 @@ The statuses widget is used to track the status of all participants involved in 
  * The controller also listens for order status updates, which will only be sent by Socket.IO if there are updates to the status of participants in this group order.  If a message is received, the controller's model is updated.
  * Each time a message is received, the controller checks to see if all statuses are completed (completed simply means the order has either been declined or has been paid for and is done).  Once all orders are completed, the _orderComplete_ event is set, which eventually results in the [application route](client/app/routes/application.js) transitioning the user to a screen to inform them their group order is complete and will be delivered soon.
 
-**application route**
+**application route**  
 [route](client/app/routes/application.js)  
 
 I wanted to briefly discuss the application route since there are some non-trivial things happening inside.
