@@ -2,6 +2,16 @@
 
 <a href="http://162.243.66.51/placeorder" alt="Live Demo" target="_blank">Live Demo</a>
 
+#### To build locally
+ * Make sure you have Ruby, Redis, Node.js & grunt-cli installed
+ * After cloning, you'll probably need to go into the _*client*_ folder and run 'npm install && bower install'
+ * Ensure _*redis-server*_ is running
+ * Run 'grunt' to build the Ember application and embed it into the Rails view architecture
+ * Run 'bin/rails s' to start the Rails server
+ * Run 'node node/server.js' to start the Node.js server
+ * Browse to 'http://localhost:3000/placeorder'
+ * *If you make any changes to the Ember application, simply run _grunt_ to rebuild/reinject the application and then restart the Rails server.  To rebuild the development database (this should only be needed if you are changing information on the backend or seed info), run _grunt fresh_*
+
 This application is a simple, collaborative ordering app that I built for presenting to the Ember-Dallas Meetup.com group.  This is not a production ready application and should only be used as a basic example or for learning purposes.
 
 ## What this ISN'T
