@@ -13,25 +13,13 @@
 
 ActiveRecord::Schema.define(version: 20140904125601) do
 
-  create_table "menucategories", force: true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.string   "image_url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "menuitems", force: true do |t|
     t.string   "title"
     t.text     "description"
-    t.string   "image_url"
     t.integer  "price_in_cents"
-    t.integer  "menucategory_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "menuitems", ["menucategory_id"], name: "index_menuitems_on_menucategory_id"
 
   create_table "orders", force: true do |t|
     t.string   "email"

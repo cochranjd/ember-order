@@ -7,9 +7,9 @@ describe "Api::Orders", :type => :request do
         params = {
             order: {
                 id: nil,
-                email: 'josh.cochran@gmail.com',
+                email: 'user1@gmail.com',
                 token: nil,
-                invitees: 'anna@gmail.com,josh@gmail.com',
+                invitees: 'user2@gmail.com,user3@gmail.com',
                 payment: nil
             }
         }
@@ -24,9 +24,9 @@ describe "Api::Orders", :type => :request do
         params = {
             order: {
                 id: nil,
-                email: 'josh.cochran@gmail.com',
+                email: 'user1@gmail.com',
                 token: nil,
-                invitees: 'anna@gmail.com,josh@gmail.com'
+                invitees: 'user2@gmail.com,user3@gmail.com'
             }
         }
 
@@ -35,10 +35,10 @@ describe "Api::Orders", :type => :request do
         email_count = ActionMailer::Base.deliveries.length
         expect(email_count).to eq(2)
 
-        email_to_josh = ActionMailer::Base.deliveries.find_all { |email| email['to'].to_s == 'josh@gmail.com' }
+        email_to_josh = ActionMailer::Base.deliveries.find_all { |email| email['to'].to_s == 'user3@gmail.com' }
         expect(email_to_josh.count).to eq(1)
 
-        email_to_anna = ActionMailer::Base.deliveries.find_all { |email| email['to'].to_s == 'anna@gmail.com' }
+        email_to_anna = ActionMailer::Base.deliveries.find_all { |email| email['to'].to_s == 'user2@gmail.com' }
         expect(email_to_anna.count).to eq(1)
     end
 
