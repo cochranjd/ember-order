@@ -23,7 +23,7 @@ export default Ember.ArrayController.extend({
     }.property( 'model' ),
 
     joinOrder: function() {
-        if ( this.get( 'order' ) && !this.get( 'connected' )) {
+        if ( this.get( 'order' ) && !this.get( 'joined' )) {
 
             this.get( 'socket' ).emit( 'order.join-room', {
                 container_id: this.get( 'order.container_id' )
